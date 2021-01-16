@@ -10,29 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_16_094056) do
+ActiveRecord::Schema.define(version: 2021_01_16_103341) do
 
-  create_table "colors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
+  create_table "colours", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
+    t.bigint "expense_type_id"
     t.string "primary", null: false
     t.string "gradient", null: false
+    t.index ["expense_type_id"], name: "index_colours_on_expense_type_id"
   end
 
   create_table "expense_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "name", null: false
-    t.bigint "colours_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["colours_id"], name: "index_expense_types_on_colours_id"
   end
 
   create_table "expenses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.decimal "amount", precision: 10, scale: 2
     t.date "spent_on", null: false
     t.string "extra_info"
-    t.bigint "expense_types_id"
+    t.bigint "expense_type_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["expense_types_id"], name: "index_expenses_on_expense_types_id"
+    t.index ["expense_type_id"], name: "index_expenses_on_expense_type_id"
   end
 
 end

@@ -1,6 +1,6 @@
-class CreateColors < ActiveRecord::Migration[6.0]
+class CreateColours < ActiveRecord::Migration[6.0]
   def change
-    create_table :colors do |t|
+    create_table :colours do |t|
       t.string :primary, null: false
       t.string :gradient, null: false
     end

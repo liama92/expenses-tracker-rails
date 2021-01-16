@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :color do
+  factory :colour do
     
   end
 end
