@@ -1,0 +1,6 @@
+<% @expenses.each do |expense| %>
+  <p>
+    <%= expense %>
+    <%= number_to_currency(expense.amount, unit: "£") %>
+  </p>
+<% end %>
