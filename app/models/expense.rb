@@ -20,4 +20,8 @@ class Expense < ApplicationRecord
   def self.month(month, year)
     Expense.all.where("YEAR(spent_on) = ? AND MONTH(spent_on) = ?", year, month).ordered
   end
+
+  def gradient
+    expense_type.colour.gradient
+  end
 end

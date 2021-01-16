@@ -1,6 +1,58 @@
-<%= expenses_bar(@expenses) %>
+<% expense_types = @expenses.map {|x| {name: x.expense_type.name}}.uniq %>
+<div class="wrapper">
+  <h1><%= format_date(@expenses[0].spent_on.month) %> daily expenses </h1>
+  
+  <% if @expenses_filtered.present? %>
+    <h2>Total: <%= number_to_currency(@expenses_filtered.map { |r| r[:amount] }.sum, unit: "£") %></h2>
+    <% else %>
+      <h2>Total: <%= number_to_currency(@expenses.map { |r| r[:amount] }.sum, unit: "£") %></h2>
+  <% end %>
 
-<% @expenses.each do |expense| %>
-  <%= expense %>
-  <%= expense.amount %>
-<% end %>
+  <%= expenses_bar(@expenses) %>
+
+  <% current_spent_on = @expenses.first["spent_on"] + 1 %>
+  <% if @expenses_filtered.present? %>
+    <% @expenses_filtered.each do |expense| %>
+      <% if expense["spent_on"] < current_spent_on %>
+        <span class="date-tag"><%= expense["spent_on"].strftime("%A") %> </span>
+        <% current_spent_on = expense["spent_on"]%>
+      <% end %>
+      <div class="tile">
+        <div class="tile-inner"> 
+          <div class="tile-left">
+            <div class="expense-icon" style="background:<%= expense.gradient %>;">
+              <%= expense.get_name[0,2] %>
+            </div>
+            <div class="tile-type">
+              <%= expense.get_name %>
+              <p class="tile-amount"><%= number_to_currency(expense["amount"], unit: "£") %></p>
+            </div>
+          </div>
+        </div>
+        <div class="tile-overlay"><%= link_to "Delete", expense_path(expense), data: {:confirm => "Are you sure you want to delete this expense?"}, method: :delete %> <%= link_to "Edit", edit_expense_path(expense) %></div>
+      </div>
+    <% end %> 
+    <% else %>
+    <% @expenses.each do |expense| %>
+      <% if expense["spent_on"] < current_spent_on %>
+        <span class="date-tag"><%= expense["spent_on"].strftime("%A") %></span>
+        <% current_spent_on = expense["spent_on"]%>
+      <% end %>
+      <div class="tile">
+        <div class="tile-inner"> 
+          <div class="tile-left">
+            <div class="expense-icon" style="background:<%= expense.gradient %>;">
+              <%= expense.to_s[0, 2] %>
+            </div>
+            <div class="tile-type">
+              <%= expense %>
+              <p class="tile-amount"><%= number_to_currency(expense["amount"], unit: "£") %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %> 
+  <% end %>
+
+  <%= link_to "Log Expense", new_expense_path %>
+</div>

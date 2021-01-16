@@ -17,6 +17,10 @@
   opacity: 1 !important;
 }
 
+.tile-left {
+  display: flex;
+}
+
 .tile-inner {
   width: 100%;
   display: flex;
@@ -104,7 +108,7 @@
   font-weight: 400;
 }
 
-.application-wrapper h1, .wrapper h2 {
+.application-wrapper h1, .application-wrapper h2 {
     text-align: center;
 }
 
