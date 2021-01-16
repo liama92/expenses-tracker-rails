@@ -76,6 +76,11 @@ colour_7 = Colour.create!(
   gradient: "linear-gradient(90deg, rgba(255,12,162,1) 0%, rgba(251,53,69,1) 100%);"
 )
 
+Colour.create!(
+  primary: "#ffb2a2",
+  gradient: "linear-gradient(90deg, rgba(255,12,162,1) 0%, rgba(251,53,69,1) 100%);"
+)
+
 
 Expense.create!(
   amount: 30,

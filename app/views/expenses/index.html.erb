@@ -10,6 +10,7 @@
 
   <div class="tile-outer">
     <% end %>
+    <%= link_to month_expenses_path(year: expense["year"], month: expense["month"]) do %>
       <div class="tile-monthly">
         <div class="monthly-tile-inner"> 
           <p class="title"><%= format_date(expense["month"]) %></p>
@@ -17,7 +18,7 @@
           <div class="clear-float"></div>
         </div>
       </div>
-
+    <% end %>
   <% if next_expense.present? %>
     <% if(year > next_expense["year"]) %>
       </div>
