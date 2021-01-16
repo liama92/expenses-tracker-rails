@@ -1,5 +1,5 @@
 <% year =  @expenses.first["year"] + 1 %>
-<p>Monthly Expenses</p>
+<h1>Monthly Expenses</h1>
 <% @expenses.each_with_index do |expense, index| %>
   <% next_expense = @expenses[index + 1] %>
 

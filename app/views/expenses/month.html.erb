@@ -1,0 +1,6 @@
+<%= expenses_bar(@expenses) %>
+
+<% @expenses.each do |expense| %>
+  <%= expense %>
+  <%= expense.amount %>
+<% end %>

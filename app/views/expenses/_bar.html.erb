@@ -1,0 +1,19 @@
+<% expense_types = expense_types.sort_by! { |k| k[:percent]}.reverse %>
+<% logger.debug(expense_types) %>
+<div class="bar-bg">
+<% expense_types.each do |expense_type| %>
+    <div style="width:<%= expense_type[:percent] %>%; background: <%= expense_type[:color][:primary] %>"></div>
+<% end %>
+<div class="clear-float"></div>
+</div>
+
+<style>
+ .bar-bg {
+    height: .5em;
+    padding: .5em;
+  }
+  .bar-bg div {
+      height: .5em;
+      float: left;
+  }
+</style>
