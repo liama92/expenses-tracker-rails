@@ -4,5 +4,6 @@ class Expense < ApplicationRecord
 
   # validations
   validates_presence_of :amount
+  validates_presence_of :spent_on
 
 end
