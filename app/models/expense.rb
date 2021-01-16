@@ -10,7 +10,7 @@ class Expense < ApplicationRecord
     expense_type.name
   end
 
-  def formatted_amount
-#    number_to_currency(amount, unit: "£")
+  def monthly
+    Expense.connection.select_all("SELECT MONTH(spent_on) AS month, YEAR(spent_on) AS year, SUM(amount) AS amount FROM `expenses` GROUP BY YEAR(spent_on), MONTH(spent_on) ORDER BY year DESC, month DESC") 
   end
 end

@@ -113,3 +113,21 @@ Expense.create!(
   spent_on: Date.new(2020, 9, 5),
   expense_type: expense_type_1
 )
+
+Expense.create!(
+  amount: 210,
+  spent_on: Date.new(2021, 1, 5),
+  expense_type: expense_type_3
+)
+
+Expense.create!(
+  amount: 210,
+  spent_on: Date.new(2021, 2, 5),
+  expense_type: expense_type_3
+)
+
+Expense.create!(
+  amount: 210,
+  spent_on: Date.new(2019, 12, 25),
+  expense_type: expense_type_3
+)

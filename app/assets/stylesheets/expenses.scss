@@ -1,3 +1,101 @@
 // Place all the styles related to the expenses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.tile-overlay {
+  position: absolute;
+  width: 100%;
+  background-color: red;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+  border-radius: .5em;
+  transition: .2s all ease-in-out;
+}
+
+.tile-overlay-display {
+  opacity: 1 !important;
+}
+
+.tile-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.tile-type {
+  font-size: 1em;
+  margin-bottom: 0;
+  font-weight: 600;
+  margin-left: 1em;
+  color: #565656;
+}
+
+.tile-amount {
+  font-size: 1.5em;
+  font-weight: 600;
+  display: block;
+  margin: 0;
+}
+
+.full-width {
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #c5c5c5;
+}
+
+.padding {
+  height: 12em;
+}
+ 
+.expense-icon {
+  color: #fff;
+  height: 1.7em;
+  width: 1.7em;
+  font-size: 1.4em;
+  font-weight: 600;
+  border-radius: 50%;
+  display: flex;
+  padding: .1em;
+  justify-content: center;
+  align-items: center;
+}
+
+.tile-outer {
+  background: #fff;
+  border-radius: .5em;
+  margin-bottom: .2em;
+}
+
+.tile-monthly {
+  position: relative;
+  height: 5em;
+  padding-left: 2em;
+  padding-right: 2em;
+  border-radius: .5em;
+  display: flex;
+  align-items: center;
+  background: #fff;
+}
+
+
+.clear-float {
+  clear: both;
+}
+
+.title {
+  float: left;
+}
+
+.amount {
+  float: right;
+}
+
+.monthly-tile-inner {
+  width: 100%;
+  display: block;
+  padding: 1em;
+}

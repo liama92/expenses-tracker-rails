@@ -10,6 +10,116 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+
+
+*/
+
+ /*
  *= require_tree .
  *= require_self
+
  */
+ 
+ body {
+  padding: 0;
+  margin: 0;
+  background: #f2f2f2;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+}
+
+.application-wrapper {
+    width: 95%;
+    margin: 0 auto;
+    padding-bottom: 1em;
+}
+
+hr {
+  border-top: 1px solid #f2f2f2;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.date-tag {
+  display: block;
+  text-align: center;
+  color: #919191;
+  font-size: .9em;
+  margin: .6em 0em .6em 0em;
+  font-weight: 600;
+}
+
+.tile {
+padding: .8em 1em .8em 1em;
+border-radius: .5em;
+margin-bottom: .5em;
+background: #fff;
+}
+
+.field {
+  margin: .5em 0;
+}
+
+.amount-control {
+  background: white;
+  padding: .5em;
+  font-weight: 600;
+  font-size: 2.5em;
+  color: #565656;
+}
+
+.amount-input {
+  border: unset;
+  border-radius: .4em;
+  color: #565656;
+  font-weight: 600;
+  font-size: 1em !important;
+  width: 50%;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input:focus {
+  outline: unset;
+}
+
+select {
+  color: #565656;
+  font-weight: 600;
+  font-size: 1em !important;
+  padding: 1em;
+  border: unset;
+  border: .2em solid #fff;
+  border-radius: .4em;
+  background: #fff;
+  -webkit-appearance: none;
+}
+
+select:focus {
+  border: .2em solid #525252;
+  outline: unset;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select option {
+  background-color: #fff;
+  font-size: 1.2em;
+}
+
+.select {
+  display: flex;
+  justify-content: space-evenly;
+}
