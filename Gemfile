@@ -5,8 +5,8 @@ ruby '2.7.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+# Use mysql as the database for Active Record
+gem "mysql2", ">= 0.4.4"
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -29,6 +29,15 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
+  gem "rspec-rails", "~> 4.0"
+  # Fixtures
+  gem "factory_bot_rails"
+
+  # Standard - Ruby style guide, linter, and formatter
+  gem "standard"
+
+  # Automatically & intelligently launch specs when files are modified
+  gem "guard-rspec", "~> 4.7.3", require: false
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
@@ -43,11 +52,10 @@ group :development do
 end
 
 group :test do
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
-  # Easy installation and use of web drivers to run system tests with browsers
-  gem 'webdrivers'
+  gem "shoulda-matchers"
+
+  # Allows stubbing HTTP requests and setting expectations on HTTP requests
+  gem "webmock", "~> 3.0"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
