@@ -1,0 +1,21 @@
+<%= form_with model: @expense, local: true do |f| %>
+  <div class="field">
+    <div class="control amount-control">
+      £ <%= f.number_field :amount, step: 0.01, required: true, class: "input amount-input", placeholder: "0.00", control: false %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="select">
+      <%= f.collection_select(:expense_type_id, ExpenseType.ordered, :id, :name, required: true, selected: 1) %>
+    </div>
+  </div>
+  <div class="field">
+    <div class="select">
+      <%= f.date_select :spent_on, required: true, class: "input", order: [:day, :month, :year], start_year: Time.now.year - 1, end_year: Time.now.year + 1%>
+    </div>
+  </div>
+  <%= f.submit class: "button is-primary" %>
+<% end %>
+
+<%= link_to "Back", expenses_path %>

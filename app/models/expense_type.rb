@@ -1,9 +1,12 @@
 class ExpenseType < ApplicationRecord
-  # asociations
-  has_many :expenses
+  # Associations
+  has_many :expenses, dependent: :destroy
   has_one :colour
 
-  # validations
+  # Validations
   validates_presence_of :name
+
+  # Scope 
+  scope :ordered, -> { order(name: :asc) }
 
 end
