@@ -12,6 +12,11 @@
   </div>
   <div class="field">
     <div class="select">
+      <%= f.text_field(:extra_info, maxlength: 20, placeholder: "Extra info") %>
+    </div>
+  </div>
+  <div class="field">
+    <div class="select">
       <%= f.date_select :spent_on, required: true, class: "input", order: [:day, :month, :year], start_year: Time.now.year - 1, end_year: Time.now.year + 1%>
     </div>
   </div>

@@ -1,0 +1,17 @@
+<%= form_with model: @expense_type, local: true do |f| %>
+  <div class="field">
+    <div class="select">
+      <%= f.text_field(:name, maxlength: 20, placeholder: "Name") %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="select">
+      <%= f.collection_select(:colour, Colour.all, :id, :primary, required: true, selected: 1) %>
+    </div>
+  </div>
+
+  <%= f.submit class: "button is-primary" %>
+<% end %>
+
+<%= link_to "Back", expense_types_path %>

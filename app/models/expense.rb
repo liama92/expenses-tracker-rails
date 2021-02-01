@@ -10,7 +10,11 @@ class Expense < ApplicationRecord
   scope :ordered, -> { order(spent_on: :desc) }
 
   def to_s
-    expense_type.name
+    if extra_info.present?
+      "#{expense_type.name} - #{extra_info}"
+    else
+      expense_type.name
+    end
   end
 
   def monthly

@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <h1> Expense types </h1>
+  <% @expense_types.each do |expense_type| %>
+      <div class="tile">
+        <div class="tile-inner"> 
+          <div class="tile-left">
+            <div class="expense-icon" style="background:<%= expense_type.gradient %>;">
+              <%= expense_type.to_s[0,2] %>
+            </div>
+            <div class="tile-type">
+              <%= expense_type %>
+            </div>
+          </div>
+        </div>
+      </div>
+  <% end %>
+  <%= link_to "New expense type", new_expense_type_path %>
+</div>

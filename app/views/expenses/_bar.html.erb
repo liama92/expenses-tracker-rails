@@ -1,5 +1,4 @@
 <% expense_types = expense_types.sort_by! { |k| k[:percent]}.reverse %>
-<% logger.debug(expense_types) %>
 <div class="bar-bg">
 <% expense_types.each do |expense_type| %>
     <div style="width:<%= expense_type[:percent] %>%; background: <%= expense_type[:color][:primary] %>"></div>

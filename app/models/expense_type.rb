@@ -9,4 +9,12 @@ class ExpenseType < ApplicationRecord
   # Scope 
   scope :ordered, -> { order(name: :asc) }
 
+  def to_s
+    name
+  end
+
+  def gradient
+    colour.gradient
+  end
+
 end

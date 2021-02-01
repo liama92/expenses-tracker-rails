@@ -14,7 +14,7 @@
   <% if @expenses_filtered.present? %>
     <% @expenses_filtered.each do |expense| %>
       <% if expense["spent_on"] < current_spent_on %>
-        <span class="date-tag"><%= expense["spent_on"].strftime("%A") %> </span>
+        <span class="date-tag"><%= expense["spent_on"].strftime("%A") %> <%= ordinalize(expense["spent_on"].day) %></span>
         <% current_spent_on = expense["spent_on"]%>
       <% end %>
       <div class="tile">
@@ -32,10 +32,10 @@
         <div class="tile-overlay"><%= link_to "Delete", expense_path(expense), data: {:confirm => "Are you sure you want to delete this expense?"}, method: :delete %> <%= link_to "Edit", edit_expense_path(expense) %></div>
       </div>
     <% end %> 
-    <% else %>
+  <% else %>
     <% @expenses.each do |expense| %>
       <% if expense["spent_on"] < current_spent_on %>
-        <span class="date-tag"><%= expense["spent_on"].strftime("%A") %></span>
+        <span class="date-tag"><%= expense["spent_on"].strftime("%A") %> <%= ordinalize(expense["spent_on"].day) %></span>
         <% current_spent_on = expense["spent_on"]%>
       <% end %>
       <div class="tile">
