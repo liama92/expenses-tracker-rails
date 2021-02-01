@@ -13,4 +13,5 @@ class ExpenseType < ApplicationRecord
     name
   end
 
+
 end

@@ -1,7 +1,7 @@
 module ExpensesHelper
   def expenses_bar(expenses)
     overall_total = expenses.sum { |r| r[:amount] }
-    expense_types = expenses.map {|x| {name: x.expense_type.name, total: 0.0, percent: 0.0, color: x.expense_type.colour}}.uniq
+    expense_types = expenses.map {|x| {name: x.expense_type.name, total: 0.0, percent: 0.0, color: x.expense_type.colour.first}}.uniq
     
     expenses.each do |expense| 
         current_expense_type = expense_types.select {|x| x[:name] == expense.expense_type.name  }.last
