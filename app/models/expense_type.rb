@@ -1,7 +1,7 @@
 class ExpenseType < ApplicationRecord
   # Associations
   has_many :expenses, dependent: :destroy
-  has_one :colour
+  has_and_belongs_to_many :colour
 
   # Validations
   validates_presence_of :name
@@ -11,10 +11,6 @@ class ExpenseType < ApplicationRecord
 
   def to_s
     name
-  end
-
-  def gradient
-    colour.gradient
   end
 
 end

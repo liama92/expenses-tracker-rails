@@ -34,49 +34,50 @@ expense_type_7 = ExpenseType.create!(
 )
 
 colour_1 = Colour.create!(
-  expense_type: expense_type_1,
+  expense_type: [expense_type_1],
   primary: "#bf0f0f",
   gradient: "linear-gradient(90deg, rgba(191,15,15,1) 0%, rgba(237,164,5,1) 100%);"
 )
 
 
 colour_2 = Colour.create!(
-  expense_type: expense_type_2,
+  expense_type: [expense_type_2],
   primary: "#ee7d09",
   gradient: "linear-gradient(90deg, rgba(238,125,9,1) 0%, rgba(255,231,57,1) 100%);"
 )
 
 colour_3 = Colour.create!(
-  expense_type: expense_type_3,
+  expense_type: [expense_type_3],
   primary: "#88fb35",
   gradient: "linear-gradient(90deg, rgba(136,251,53,1) 0%, rgba(191,255,12,1) 100%);"
 )
 
 colour_5 = Colour.create!(
-  expense_type: expense_type_4,
+  expense_type: [expense_type_4],
   primary: "#3567fb",
   gradient: "linear-gradient(90deg, rgba(53,103,251,1) 0%, rgba(12,170,255,1) 100%);"
 )
 
 colour_6 = Colour.create!(
-  expense_type: expense_type_5,
+  expense_type: [expense_type_5],
   primary: "#353efb",
   gradient: "linear-gradient(90deg, rgba(53,62,251,1) 0%, rgba(98,12,255,1) 100%);"
 )
 
 colour_4 = Colour.create!(
-  expense_type: expense_type_6,
+  expense_type: [expense_type_6],
   primary: "#620cff",
   gradient: "linear-gradient(90deg, rgba(98,12,255,1) 0%, rgba(153,53,251,1) 100%);"
 )
 
 colour_7 = Colour.create!(
-  expense_type: expense_type_7,
+  expense_type: [expense_type_7],
   primary: "#ff0ca2",
   gradient: "linear-gradient(90deg, rgba(255,12,162,1) 0%, rgba(251,53,69,1) 100%);"
 )
 
 Colour.create!(
+  expense_type: [expense_type_7, expense_type_1],
   primary: "#ffb2a2",
   gradient: "linear-gradient(90deg, rgba(255,12,162,1) 0%, rgba(251,53,69,1) 100%);"
 )

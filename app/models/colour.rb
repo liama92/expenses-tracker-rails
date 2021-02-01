@@ -3,6 +3,6 @@ class Colour < ApplicationRecord
   validates_presence_of :gradient
   validates_presence_of :primary
   
-  belongs_to :expense_type, optional: true
+  has_and_belongs_to_many :expense_type, optional: true
 
 end

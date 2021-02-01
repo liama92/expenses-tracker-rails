@@ -1,6 +1,5 @@
 class CreateColoursAgain < ActiveRecord::Migration[6.0]
   def change
-    drop_table :colours
 
     create_table :colours do |t|
       t.bigint  :expense_type_id
