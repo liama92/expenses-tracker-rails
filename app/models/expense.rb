@@ -26,6 +26,6 @@ class Expense < ApplicationRecord
   end
 
   def gradient
-    expense_type.colour.first.gradient
+    expense_type.colour.gradient
   end
 end
