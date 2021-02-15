@@ -80,13 +80,17 @@ expense_type_5 = ExpenseType.create!(
 
 expense_type_6 = ExpenseType.create!(
   name: "Smoking",
-  colour: colour_7,
+  colour: colour_6,
 )
 
 expense_type_7 = ExpenseType.create!(
   name: "Travel",
-  colour: colour_6,
+  colour: colour_7,
+)
 
+expense_type_8 = ExpenseType.create!(
+  name: "Car repair",
+  colour: colour_7,
 )
 
 Expense.create!(

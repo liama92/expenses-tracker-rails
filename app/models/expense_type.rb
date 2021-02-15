@@ -1,7 +1,7 @@
 class ExpenseType < ApplicationRecord
   # Associations
   has_many :expenses, dependent: :destroy
-  has_one :colour
+  belongs_to :colour
 
   # Validations
   validates_presence_of :name

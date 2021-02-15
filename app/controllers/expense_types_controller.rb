@@ -9,11 +9,9 @@ class ExpenseTypesController < ApplicationController
   end
 
   def create
-    # TODO the association might need thinking about more 
-    # a colour should have many expense types 
-    
     @expense_type = ExpenseType.new(expense_type_params)
-   # @expense_type.colour = Colour.first
+    @expense_type.colour = Colour.first
+
     if @expense_type.save
       redirect_to expense_types_path
     else
@@ -28,9 +26,7 @@ class ExpenseTypesController < ApplicationController
   end
 
   def set_colour
-    logger.debug("looking for colour with")
-    logger.debug(params[:colour])
-    Colour.find_by(id: params[:colour])
+    Colour.find(params[:expense_type][:colour])
   end
 
   def expense_type_params
