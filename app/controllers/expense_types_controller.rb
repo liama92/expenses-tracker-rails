@@ -10,7 +10,6 @@ class ExpenseTypesController < ApplicationController
 
   def create
     @expense_type = ExpenseType.new(expense_type_params)
-    @expense_type.colour = Colour.first
 
     if @expense_type.save
       redirect_to expense_types_path
@@ -25,13 +24,9 @@ class ExpenseTypesController < ApplicationController
     @expense_types = ExpenseType.all
   end
 
-  def set_colour
-    Colour.find(params[:expense_type][:colour])
-  end
-
   def expense_type_params
     params
       .require(:expense_type)
-      .permit(:name)
+      .permit(:colour_id, :name)
   end
 end

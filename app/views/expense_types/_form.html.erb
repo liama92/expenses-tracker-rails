@@ -7,7 +7,7 @@
 
   <div class="field">
     <div class="select">
-      <%= f.collection_select(:colour, Colour.all, :id, :primary, required: true, selected: 1) %>
+      <%= f.collection_select(:colour_id, Colour.all, :id, :primary, required: true, selected: 1) %>
     </div>
   </div>
 
