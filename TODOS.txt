@@ -1,0 +1,16 @@
+TODOS 
+- add report
+- add in overlay and delete / edit buttons 
+
+- compare months 
+
+- user auth and sign up / registration
+
+
+In progress 
+
+
+Done
+- add filters for expense types, need to add links now 
+- group expenses by week, need to add a week view
+- sort out ambiguous method names for month / monthly and week / weekly

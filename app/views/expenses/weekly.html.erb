@@ -1,0 +1,30 @@
+<% year =  @expenses.first["year"] + 1 %>
+<h1>Weekly Expenses</h1>
+<% @expenses.each_with_index do |expense, index| %>
+  <% next_expense = @expenses[index + 1] %>
+
+  <% if(year > expense["year"]) %>    
+    <span class="date-tag"> <%= expense["year"] %></span>
+    <% year = expense["year"] %>
+    <div class="tile-outer">
+  <% end %>
+
+  <%= link_to week_expenses_path(year: expense["year"], month: expense["month"], week: expense["week"]) do %>
+    <div class="tile-monthly">
+      <div class="monthly-tile-inner"> 
+        <p class="title"><%= format_date(expense["month"]) %> week <%= expense["week"] + 1 %></p>
+        <p class="amount"><%= number_to_currency(expense["amount"], unit: "£") %></p>
+        <div class="clear-float"></div>
+      </div>
+    </div>
+  <% end %>  
+  <% if next_expense.present? %>
+    <% if(year > next_expense["year"]) %>
+      </div>
+    <% else %>
+      <hr>
+    <% end %>
+  <% else %>
+    </div>
+  <% end %>
+<% end %>

@@ -1,7 +1,7 @@
 <% expense_types = @expenses.map {|x| {id: x.expense_type.id, name: x.expense_type.name}}.uniq %>
 
 <div class="wrapper">
-  <h1><%= format_date(@expenses[0].spent_on.month) %> daily expenses </h1>
+  <h1><%= format_date(@expenses[0].spent_on.month) %> week <%= params[:week].to_i + 1 %> expenses </h1>
   
   <h2>Total: <%= number_to_currency(@expenses.map { |r| r[:amount] }.sum, unit: "£") %></h2>
 
@@ -9,11 +9,11 @@
 
   <p>
     <b>Filters</b>: 
-    <%= link_to "All", month_expenses_path(year: @expenses.first.spent_on.year, month: @expenses.first.spent_on.month) %>
+    <%= link_to "All", week_expenses_path(year: @expenses.first.spent_on.year, month: @expenses.first.spent_on.month, week: params[:week]) %>
 
     <% expense_types.each do |expense_type| %>
       | 
-      <%= link_to month_expenses_path(year: @expenses.first.spent_on.year, month: @expenses.first.spent_on.month, expense_type: expense_type[:id]) do %>
+      <%= link_to week_expenses_path(year: @expenses.first.spent_on.year, month: @expenses.first.spent_on.month, week: params[:week], expense_type: expense_type[:id]) do %>
         <%= expense_type[:name] %>
       <% end %>
     <% end %>

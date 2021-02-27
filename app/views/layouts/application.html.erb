@@ -13,7 +13,11 @@
   <body>
     <div class='application-wrapper'>
       <%= yield %>
-      <%= link_to "Log Expense", new_expense_path %> | <%= link_to "Expenses Types", expense_types_path %> | <%= link_to "New Expense Type", new_expense_type_path %>
+      <%= link_to "Log Expense", new_expense_path %> | 
+      <%= link_to "Expenses Types", expense_types_path %> | 
+      <%= link_to "New Expense Type", new_expense_type_path %> |
+      <%= link_to "Weekly", weekly_expenses_path %> |
+      <%= link_to "Monthly", expenses_path %> |
 
     </div>
   </body>

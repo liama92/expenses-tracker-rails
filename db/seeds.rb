@@ -58,7 +58,7 @@ expense_type_1 = ExpenseType.create!(
 
 expense_type_2 = ExpenseType.create!(
   name: "Direct Debit",
-  colour: colour_2,
+  colour: colour_7,
 
 )
 
@@ -85,7 +85,7 @@ expense_type_6 = ExpenseType.create!(
 
 expense_type_7 = ExpenseType.create!(
   name: "Travel",
-  colour: colour_7,
+  colour: colour_2,
 )
 
 expense_type_8 = ExpenseType.create!(
@@ -95,60 +95,36 @@ expense_type_8 = ExpenseType.create!(
 
 Expense.create!(
   amount: 200,
-  spent_on: Date.new(2020, 9, 15),
+  spent_on: Date.new(2021, 1, 1),
   expense_type: expense_type_1
 )
 
 Expense.create!(
   amount: 30,
-  spent_on: Date.new(2020, 9, 5),
+  spent_on: Date.new(2021, 1, 8),
   expense_type: expense_type_1
 )
 
 Expense.create!(
   amount: 10,
-  spent_on: Date.new(2020, 10, 5),
+  spent_on: Date.new(2021, 1, 15),
   expense_type: expense_type_1
 )
 
 Expense.create!(
   amount: 50,
-  spent_on: Date.new(2020, 10, 7),
-  expense_type: expense_type_2
-)
-
-Expense.create!(
-  amount: 200,
-  spent_on: Date.new(2020, 9, 15),
-  expense_type: expense_type_3
-)
-
-Expense.create!(
-  amount: 70,
-  spent_on: Date.new(2020, 8, 5),
-  expense_type: expense_type_1
-)
-
-Expense.create!(
-  amount: 140,
-  spent_on: Date.new(2020, 9, 5),
-  expense_type: expense_type_1
-)
-
-Expense.create!(
-  amount: 210,
-  spent_on: Date.new(2021, 1, 5),
-  expense_type: expense_type_1
-)
-
-Expense.create!(
-  amount: 210,
-  spent_on: Date.new(2021, 2, 5),
+  spent_on: Date.new(2021, 1, 22),
   expense_type: expense_type_5
 )
 
 Expense.create!(
-  amount: 210,
-  spent_on: Date.new(2019, 12, 25),
+  amount: 50,
+  spent_on: Date.new(2021, 1, 22),
   expense_type: expense_type_3
+)
+
+Expense.create!(
+  amount: 75,
+  spent_on: Date.new(2020, 1, 22),
+  expense_type: expense_type_2
 )
